@@ -1,14 +1,16 @@
-import React,{useState} from 'react';
+import React from 'react';
+import store from './../store/MainStore';
+import { observer } from "mobx-react";
 
-const Time = (props) => {
-  const [currTime, setCurrTime] = useState(new Date());
+
+const Time = observer((props) => {
  
   setTimeout(() => {
-    setCurrTime(new Date());
+    store.updateTime(new Date());
   }, 1000);
   return (
     <div className={"container"}>
-      {currTime.toLocaleString()}
+      {store.time.toLocaleString()}
       <div style={{marginTop:"20px"}}>
       <button className={"back"} onClick={()=> {props.history.push('/home')}}>GO BACK</button>
       <button onClick={()=> {props.history.push('/data')}}>GO NEXT</button>
@@ -16,5 +18,5 @@ const Time = (props) => {
       </div>
     </div>
   )
-}
+});
 export default Time;

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { observer } from "mobx-react";
+import store from './../store/MainStore';
 
-const Data = (props) => {
-  const [value,setValue] = useState(0);
+const Data = observer((props) => {
 
   return(
   <div className={"container"}>
     <div>
-      COUNTER : {`  ${value}`}
+      COUNTER : {`  ${store.counter}`}
     </div>
     <div style={{display:"flex", justifyContent:"space-between"}}>
-      <button style={{width:"50px"}} onClick={() => setValue(value+1)}>+</button>
-      <button style={{width:"50px"}} onClick={() => setValue(value-1)}>-</button>
+      <button style={{width:"50px"}} onClick={() => store.addCounter()}>+</button>
+      <button style={{width:"50px"}} onClick={() => store.subCounter()}>-</button>
     </div>
       <div style={{marginTop:"20px"}}>
         <button onClick={()=> {props.history.push('/time')}}>GO NEXT</button>
@@ -18,5 +19,5 @@ const Data = (props) => {
       </div>
     </div>
   )
-};
+});
 export default Data;

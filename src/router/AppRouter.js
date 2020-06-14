@@ -8,12 +8,12 @@ import  Time  from './../components/Time';
 import  Data  from './../components/Data';
 import  Currency  from './../components/Currency';
 
-
 export const history = createBrowserHistory()
 
 
-  const AppRouter = () => (
+  const AppRouter = ({store}) => (
     <Router history={history}>
+
       <div>
             <Route path={["/","/home"]} component={Home} exact={true} />
             <Route path="/time" component={Time} />
