@@ -27,7 +27,7 @@
     "live-server": "^1.2.1",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
